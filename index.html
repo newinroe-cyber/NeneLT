@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Lottery Statistical Analyzer</title>
+<style>
+:root{--bg:#f4f5fb;--cd:#fff;--tx:#1b2033;--mu:#6b7287;--bd:#e4e7f1;--a:#6366f1;--b:#ec4899;--ok:#15803d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1119;--cd:#1a1e2b;--tx:#e9ebf5;--mu:#98a0b6;--bd:#2a3043;--a:#8b8cff;--b:#f472b6;--ok:#4ade80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1119;--cd:#1a1e2b;--tx:#e9ebf5;--mu:#98a0b6;--bd:#2a3043;--a:#8b8cff;--b:#f472b6;--ok:#4ade80;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Noto Sans Thai",sans-serif;line-height:1.5}
+header{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;padding:22px 16px 56px}
+.w{max-width:920px;margin:0 auto;padding:0 16px}header .w{padding:0}
+h1{margin:0;font-size:1.35rem}.s{opacity:.9;font-size:.85rem}
+main{margin-top:-40px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{border:0;background:var(--cd);color:var(--tx);padding:10px 16px;border-radius:999px;font-size:.95rem;cursor:pointer;box-shadow:0 1px 3px #0002}
+.tab.on{background:var(--tx);color:var(--bg);font-weight:600}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:16px;margin-bottom:14px}
+.c h2{margin:0 0 10px;font-size:1rem}.mu{color:var(--mu);font-size:.85rem}
+.big{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.big span{width:44px;height:56px;display:grid;place-items:center;font-size:1.8rem;font-weight:700;border-radius:12px;background:linear-gradient(160deg,var(--a),var(--b));color:#fff}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--bd);white-space:nowrap}
+.n{font-family:ui-monospace,Menlo,monospace;font-weight:700;letter-spacing:.1em}
+.ch{display:flex;align-items:flex-end;gap:6px;height:150px}.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bar{width:100%;border-radius:6px 6px 0 0;background:linear-gradient(var(--a),var(--b));min-height:2px}.ct{font-size:.72rem;color:var(--mu)}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--bd);margin:2px;font-size:.85rem}
+input{width:100%;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:1rem}
+.btn{margin-top:10px;background:var(--a);color:#fff;border:0;border-radius:10px;padding:10px 16px;font-size:.95rem;cursor:pointer}.btn:disabled{opacity:.55}
+.r{white-space:pre-wrap;margin-top:10px;font-size:.92rem}.warn{font-size:.8rem;color:var(--mu);padding-bottom:20px}
+</style></head><body>
+<header><div class="w"><h1>🎯 Lottery Statistical Analyzer</h1><div class="s" id="up"></div></div></header>
+<main class="w"><div class="tabs" id="tabs"></div><div id="v"></div>
+<div class="warn">สถิตินี้ใช้ดูข้อมูลย้อนหลังเท่านั้น ผลรางวัลแต่ละงวดเป็นเหตุการณ์สุ่มอิสระ ไม่มีเลขใดได้เปรียบ และไม่สามารถทำนายงวดต่อไปได้</div></main>
+<script>
+const SEED={"updated": "seed", "draws": [{"type": "thai", "date": "2025-11-16", "variant": "main", "number": "458145", "last2": "37", "extra": {"front3": ["242", "602"], "back3": ["239", "389"]}}, {"type": "lao", "date": "2026-10-12", "variant": "main", "number": "7592", "last2": "92", "extra": {}}, {"type": "lao", "date": "2026-10-13", "variant": "main", "number": "7658", "last2": "58", "extra": {}}, {"type": "lao", "date": "2026-10-14", "variant": "main", "number": "0358", "last2": "58", "extra": {}}, {"type": "lao", "date": "2026-10-15", "variant": "main", "number": "6261", "last2": "61", "extra": {}}, {"type": "lao", "date": "2026-10-16", "variant": "main", "number": "6052", "last2": "52", "extra": {}}, {"type": "lao", "date": "2026-10-19", "variant": "main", "number": "6331", "last2": "31", "extra": {}}]};
+const T={thai:"🇹🇭 หวยรัฐบาลไทย",lao:"🇱🇦 หวยลาว",hanoi:"🇻🇳 ฮานอย (ปกติ)"};
+let D=SEED,tab="thai",busy=false,out={},key="";
+fetch("data.json?"+Date.now()).then(r=>r.ok?r.json():Promise.reject()).then(j=>{D=j;draw()}).catch(()=>{});
+const rows=t=>D.draws.filter(x=>x.type===t).sort((a,b)=>b.date.localeCompare(a.date));
+const freq=t=>{const f=Array(10).fill(0);rows(t).forEach(r=>[...r.number].forEach(d=>f[+d]++));return f};
+const ex=r=>r.type==="thai"&&r.extra.front3?`หน้า3 ${r.extra.front3.join("/")} · ท้าย3 ${r.extra.back3.join("/")} · ท้าย2 ${r.last2}`:`ท้าย2 ${r.last2}`;
+function draw(){
+ document.getElementById("up").textContent="อัปเดตข้อมูลล่าสุด: "+(D.updated==="seed"?"ข้อมูลตัวอย่างเริ่มต้น":D.updated.slice(0,16).replace("T"," ")+" UTC");
+ document.getElementById("tabs").innerHTML=Object.keys(T).map(k=>`<button class="tab ${k===tab?"on":""}" data-k="${k}">${T[k]}</button>`).join("");
+ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{tab=b.dataset.k;draw()});
+ const R=rows(tab),f=freq(tab),mx=Math.max(1,...f),s=f.map((c,d)=>({d,c})).sort((a,b)=>b.c-a.c||a.d-b.d);
+ const L=R[0];
+ document.getElementById("v").innerHTML=`
+ <div class="c"><h2>งวดล่าสุด ${L?L.date:""}</h2>${L?`<div class="big">${[...L.number].map(d=>`<span>${d}</span>`).join("")}</div><div class="mu">${ex(L)}</div>`:`<div class="mu">ยังไม่มีข้อมูล</div>`}</div>
+ <div class="c"><h2>ความถี่เลข 0–9 (จาก ${R.length} งวด)</h2><div class="ch">${f.map((c,d)=>`<div class="col"><span class="ct">${c}</span><div class="bar" style="height:${c/mx*105}px"></div><b>${d}</b></div>`).join("")}</div>
+ <p class="mu">ออกบ่อย: ${s.slice(0,3).map(x=>`<span class="chip">${x.d} (${x.c})</span>`).join("")} ออกน้อย: ${s.slice(-3).reverse().map(x=>`<span class="chip">${x.d} (${x.c})</span>`).join("")}</p></div>
+ <div class="c"><h2>ผลย้อนหลัง</h2><div class="tw"><table><tr><th>งวดวันที่</th><th>ผล</th><th>รายละเอียด</th></tr>${R.map(r=>`<tr><td>${r.date}</td><td class="n">${r.number}</td><td>${ex(r)}</td></tr>`).join("")}</table></div></div>
+ <div class="c"><h2>🧠 ให้ Gemini วิเคราะห์ (ไม่บังคับ)</h2><input type="password" id="k" placeholder="Gemini API Key (เก็บในเครื่องคุณเท่านั้น)" value="${key}" autocomplete="off">
+ <button class="btn" id="ai" ${busy?"disabled":""}>${busy?"Loading...":"🧠 ให้ Gemini วิเคราะห์แนวโน้ม"}</button><div class="r">${out[tab]||""}</div></div>`;
+ document.getElementById("k").oninput=e=>key=e.target.value;
+ document.getElementById("ai").onclick=ai;
+}
+async function ai(){
+ if(busy)return;busy=true;draw();const t=tab;
+ const data=rows(t).map(r=>r.date+": "+r.number).join("\n");
+ try{
+  if(!key.trim())throw 0;
+  const r=await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",{method:"POST",headers:{"Content-Type":"application/json","x-goog-api-key":key.trim()},body:JSON.stringify({contents:[{parts:[{text:"วิเคราะห์สถิติผลหวยต่อไปนี้ สรุปเลขออกบ่อย/ออกน้อย และแนวทางบริหารความเสี่ยงเป็นภาษาไทย โดยย้ำว่าผลแต่ละงวดสุ่มอิสระ ไม่สามารถทำนายได้:\n"+data}]}]})});
+  const j=await r.json();out[t]=j.candidates?.[0]?.content?.parts?.[0]?.text||("Gemini แจ้งข้อผิดพลาด: "+(j.error?.message||"ไม่ทราบสาเหตุ"));
+ }catch(e){out[t]="ยังเรียก Gemini ไม่ได้ (ไม่ได้ใส่คีย์ หรือเครือข่ายถูกบล็อก) — ดูสถิติด้านบนแทนได้เลย"}
+ busy=false;draw();
+}
+draw();
+</script></body></html>
