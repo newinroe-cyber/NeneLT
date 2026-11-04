@@ -1,9 +1,70 @@
-{"updated":"seed","draws":[
-{"type":"thai","date":"2025-11-16","variant":"main","number":"458145","last2":"37","extra":{"front3":["242","602"],"back3":["239","389"]}},
-{"type":"lao","date":"2026-10-12","variant":"main","number":"7592","last2":"92","extra":{}},
-{"type":"lao","date":"2026-10-13","variant":"main","number":"7658","last2":"58","extra":{}},
-{"type":"lao","date":"2026-10-14","variant":"main","number":"0358","last2":"58","extra":{}},
-{"type":"lao","date":"2026-10-15","variant":"main","number":"6261","last2":"61","extra":{}},
-{"type":"lao","date":"2026-10-16","variant":"main","number":"6052","last2":"52","extra":{}},
-{"type":"lao","date":"2026-10-19","variant":"main","number":"6331","last2":"31","extra":{}}
-]}
+{
+ "updated": "2026-11-04T10:01:11+00:00",
+ "draws": [
+  {
+   "type": "lao",
+   "date": "2026-10-12",
+   "variant": "main",
+   "number": "7592",
+   "last2": "92",
+   "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-13",
+   "variant": "main",
+   "number": "7658",
+   "last2": "58",
+   "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-14",
+   "variant": "main",
+   "number": "0358",
+   "last2": "58",
+   "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-15",
+   "variant": "main",
+   "number": "6261",
+   "last2": "61",
+   "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-16",
+   "variant": "main",
+   "number": "6052",
+   "last2": "52",
+   "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-19",
+   "variant": "main",
+   "number": "6331",
+   "last2": "31",
+   "extra": {}
+  },
+  {
+   "type": "thai",
+   "date": "2025-11-16",
+   "variant": "main",
+   "number": "458145",
+   "last2": "37",
+   "extra": {
+    "front3": [
+     "242",
+     "602"
+    ],
+    "back3": [
+     "239",
+     "389"
+    ]
+   }
+  }
+ ]
+}
