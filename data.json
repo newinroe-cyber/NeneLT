@@ -1,6 +1,96 @@
 {
- "updated": "2026-11-04T10:15:37+00:00",
+ "updated": "2026-11-04T20:52:48+00:00",
  "draws": [
+  {
+   "type": "hanoi",
+   "date": "2026-10-26",
+   "variant": "normal",
+   "number": "0993",
+   "last2": "73",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-10-27",
+   "variant": "normal",
+   "number": "7800",
+   "last2": "86",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-10-28",
+   "variant": "normal",
+   "number": "7366",
+   "last2": "01",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-10-29",
+   "variant": "normal",
+   "number": "3401",
+   "last2": "45",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-10-30",
+   "variant": "normal",
+   "number": "5074",
+   "last2": "83",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-10-31",
+   "variant": "normal",
+   "number": "8457",
+   "last2": "48",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-01",
+   "variant": "normal",
+   "number": "3917",
+   "last2": "88",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-02",
+   "variant": "normal",
+   "number": "0129",
+   "last2": "81",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-03",
+   "variant": "normal",
+   "number": "4446",
+   "last2": "71",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-04",
+   "variant": "normal",
+   "number": "3046",
+   "last2": "75",
+   "extra": {},
+   "src": "gemini"
+  },
   {
    "type": "lao",
    "date": "2026-10-12",
@@ -48,6 +138,94 @@
    "number": "6331",
    "last2": "31",
    "extra": {}
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-26",
+   "variant": "main",
+   "number": "0042",
+   "last2": "42",
+   "extra": {
+    "six": "160042"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-27",
+   "variant": "main",
+   "number": "3372",
+   "last2": "72",
+   "extra": {
+    "six": "653372"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-28",
+   "variant": "main",
+   "number": "0618",
+   "last2": "18",
+   "extra": {
+    "six": "740618"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-29",
+   "variant": "main",
+   "number": "3294",
+   "last2": "94",
+   "extra": {
+    "six": "723294"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-10-30",
+   "variant": "main",
+   "number": "3206",
+   "last2": "06",
+   "extra": {
+    "six": "863206"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-02",
+   "variant": "main",
+   "number": "8155",
+   "last2": "55",
+   "extra": {
+    "six": "738155"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-03",
+   "variant": "main",
+   "number": "5713",
+   "last2": "13",
+   "extra": {
+    "six": "145713"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-04",
+   "variant": "main",
+   "number": "8808",
+   "last2": "08",
+   "extra": {
+    "six": "048808"
+   },
+   "src": "gemini"
   },
   {
    "type": "thai",
