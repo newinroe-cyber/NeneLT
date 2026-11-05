@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T01:05:25+00:00",
+ "updated": "2026-11-05T21:09:14+00:00",
  "draws": [
   {
    "type": "hanoi",
@@ -243,6 +243,150 @@
      "389"
     ]
    }
+  },
+  {
+   "type": "thai",
+   "date": "2026-07-16",
+   "variant": "main",
+   "number": "639214",
+   "last2": "71",
+   "extra": {
+    "front3": [
+     "683",
+     "709"
+    ],
+    "back3": [
+     "746",
+     "427"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-08-01",
+   "variant": "main",
+   "number": "932479",
+   "last2": "69",
+   "extra": {
+    "front3": [
+     "413",
+     "672"
+    ],
+    "back3": [
+     "154",
+     "039"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-08-16",
+   "variant": "main",
+   "number": "004615",
+   "last2": "53",
+   "extra": {
+    "front3": [
+     "731",
+     "429"
+    ],
+    "back3": [
+     "937",
+     "094"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-09-01",
+   "variant": "main",
+   "number": "417212",
+   "last2": "04",
+   "extra": {
+    "front3": [
+     "257",
+     "346"
+    ],
+    "back3": [
+     "136",
+     "740"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-09-16",
+   "variant": "main",
+   "number": "730640",
+   "last2": "64",
+   "extra": {
+    "front3": [
+     "060",
+     "521"
+    ],
+    "back3": [
+     "266",
+     "041"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-10-01",
+   "variant": "main",
+   "number": "402701",
+   "last2": "70",
+   "extra": {
+    "front3": [
+     "791",
+     "912"
+    ],
+    "back3": [
+     "058",
+     "396"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-10-16",
+   "variant": "main",
+   "number": "011781",
+   "last2": "48",
+   "extra": {
+    "front3": [
+     "402",
+     "392"
+    ],
+    "back3": [
+     "171",
+     "255"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-11-01",
+   "variant": "main",
+   "number": "423224",
+   "last2": "85",
+   "extra": {
+    "front3": [
+     "300",
+     "950"
+    ],
+    "back3": [
+     "393",
+     "804"
+    ]
+   },
+   "src": "gemini"
   }
  ]
 }
