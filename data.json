@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T21:29:15+00:00",
+ "updated": "2026-11-12T21:31:14+00:00",
  "draws": [
   {
    "type": "hanoi",
@@ -142,6 +142,24 @@
    "variant": "normal",
    "number": "3683",
    "last2": "92",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-11",
+   "variant": "normal",
+   "number": "4129",
+   "last2": "79",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-12",
+   "variant": "normal",
+   "number": "3454",
+   "last2": "76",
    "extra": {},
    "src": "gemini"
   },
@@ -322,6 +340,28 @@
    "last2": "46",
    "extra": {
     "six": "173546"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-11",
+   "variant": "main",
+   "number": "2193",
+   "last2": "93",
+   "extra": {
+    "six": "522193"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-12",
+   "variant": "main",
+   "number": "9836",
+   "last2": "36",
+   "extra": {
+    "six": "189836"
    },
    "src": "gemini"
   },
