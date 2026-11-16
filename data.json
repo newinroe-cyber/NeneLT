@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T19:53:40+00:00",
+ "updated": "2026-11-16T23:28:10+00:00",
  "draws": [
   {
    "type": "hanoi",
@@ -178,6 +178,24 @@
    "variant": "normal",
    "number": "0893",
    "last2": "91",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-15",
+   "variant": "normal",
+   "number": "1225",
+   "last2": "38",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-16",
+   "variant": "normal",
+   "number": "7403",
+   "last2": "14",
    "extra": {},
    "src": "gemini"
   },
@@ -395,6 +413,17 @@
    "src": "gemini"
   },
   {
+   "type": "lao",
+   "date": "2026-11-16",
+   "variant": "main",
+   "number": "0071",
+   "last2": "71",
+   "extra": {
+    "six": "460071"
+   },
+   "src": "gemini"
+  },
+  {
    "type": "thai",
    "date": "2025-11-16",
    "variant": "main",
@@ -551,6 +580,24 @@
     "back3": [
      "393",
      "804"
+    ]
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "thai",
+   "date": "2026-11-16",
+   "variant": "main",
+   "number": "645654",
+   "last2": "06",
+   "extra": {
+    "front3": [
+     "938",
+     "101"
+    ],
+    "back3": [
+     "106",
+     "782"
     ]
    },
    "src": "gemini"
