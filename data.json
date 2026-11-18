@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T22:31:07+00:00",
+ "updated": "2026-11-18T22:12:18+00:00",
  "draws": [
   {
    "type": "hanoi",
@@ -205,6 +205,15 @@
    "variant": "normal",
    "number": "9865",
    "last2": "20",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-18",
+   "variant": "normal",
+   "number": "1915",
+   "last2": "95",
    "extra": {},
    "src": "gemini"
   },
@@ -440,6 +449,17 @@
    "last2": "41",
    "extra": {
     "six": "489441"
+   },
+   "src": "gemini"
+  },
+  {
+   "type": "lao",
+   "date": "2026-11-18",
+   "variant": "main",
+   "number": "5341",
+   "last2": "41",
+   "extra": {
+    "six": "265341"
    },
    "src": "gemini"
   },
