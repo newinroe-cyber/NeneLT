@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T20:37:30+00:00",
+ "updated": "2026-11-22T20:47:17+00:00",
  "draws": [
   {
    "type": "hanoi",
@@ -241,6 +241,15 @@
    "variant": "normal",
    "number": "6804",
    "last2": "86",
+   "extra": {},
+   "src": "gemini"
+  },
+  {
+   "type": "hanoi",
+   "date": "2026-11-22",
+   "variant": "normal",
+   "number": "2286",
+   "last2": "21",
    "extra": {},
    "src": "gemini"
   },
